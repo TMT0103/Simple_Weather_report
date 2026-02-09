@@ -98,35 +98,7 @@ weather-app/
 - Emoji động theo điều kiện thời tiết
 - Responsive trên mọi thiết bị
 
-## 🔧 Cấu hình Angular 21
 
-### Standalone Components
-
-Ứng dụng sử dụng kiến trúc standalone components (không cần NgModule):
-
-```typescript
-@Component({
-  selector: 'app-weather',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './weather.component.html',
-  styleUrl: './weather.component.css'
-})
-```
-
-### Providers Configuration
-
-File `app.config.ts` cấu hình providers:
-
-```typescript
-export const appConfig: ApplicationConfig = {
-  providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), 
-    provideRouter(routes),
-    provideHttpClient()
-  ]
-};
-```
 
 ## 📖 Cách sử dụng
 
@@ -150,84 +122,14 @@ export const appConfig: ApplicationConfig = {
 - ☀ - Clear sky (800)
 - ☁ - Clouds (801-809)
 
-## 🚀 Build Production
 
-Build ứng dụng cho môi trường production:
 
-```bash
-ng build
-```
 
-Hoặc build với optimization:
-
-```bash
-ng build --configuration production
-```
-
-Files build sẽ được tạo trong thư mục `dist/`.
-
-## 🧪 Testing
-
-Chạy unit tests:
-
-```bash
-ng test
-```
-
-Chạy end-to-end tests:
-
-```bash
-ng e2e
-```
-
-## 🐛 Xử lý lỗi thường gặp
-
-### Lỗi Zone.js
-
-Nếu gặp lỗi `NG0908: In this configuration Angular requires Zone.js`:
-
-**Giải pháp:** Thêm zone.js vào `main.ts`:
-
-```typescript
-import 'zone.js';
-import { bootstrapApplication } from '@angular/platform-browser';
-```
-
-### Lỗi API Key
-
-Nếu không lấy được dữ liệu:
-- Kiểm tra API key có hợp lệ không
-- Đảm bảo API key đã được kích hoạt (có thể mất vài phút)
-- Kiểm tra kết nối internet
-
-### Lỗi CORS
-
-OpenWeatherMap API hỗ trợ CORS, nhưng nếu gặp lỗi:
-- Kiểm tra API endpoint
-- Thử dùng proxy configuration trong Angular
-
-## 📝 License
-
-MIT License - Tự do sử dụng cho mục đích học tập và thương mại.
 
 ## 👨‍💻 Tác giả
 
-Phát triển bởi [Your Name]
+Phát triển bởi Minh Tuấn
 
-## 🤝 Đóng góp
-
-Contributions, issues và feature requests luôn được chào đón!
-
-## 📞 Liên hệ
-
-- Email: your.email@example.com
-- GitHub: [@yourusername](https://github.com/yourusername)
-
-## 🙏 Cảm ơn
-
-- [OpenWeatherMap](https://openweathermap.org/) - API dữ liệu thời tiết
-- [Angular](https://angular.dev/) - Framework
-- Cộng đồng Angular Việt Nam
 
 ---
 
