@@ -18,7 +18,7 @@ export interface WeatherData {
   providedIn: 'root'
 })
 export class WeatherService {
-  private apiKey = '10ae0525819d3123b6ed49d28f20a3a7';
+  private apiKey = 'YOUR_API_KEY';
   private apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
   constructor(private http: HttpClient) {}
