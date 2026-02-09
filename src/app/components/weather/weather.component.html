@@ -1,0 +1,23 @@
+<form class="weatherForm" (ngSubmit)="onSubmit()">
+  <input 
+    type="text" 
+    class="cityInput" 
+    placeholder="Enter city"
+    [(ngModel)]="city"
+    name="city">
+  <button type="submit">Get Weather</button>
+</form>
+
+<div class="card" *ngIf="showCard">
+  <!-- Error Display -->
+  <p class="errorDisplay" *ngIf="errorMessage">{{ errorMessage }}</p>
+  
+  <!-- Weather Display -->
+  <ng-container *ngIf="weatherData && !errorMessage">
+    <h1 class="cityDisplay">{{ weatherData.name }}</h1>
+    <p class="tempDisplay">{{ getTempInCelsius(weatherData.main.temp) }}°C</p>
+    <p class="humidityDisplay">Humidity: {{ weatherData.main.humidity }}%</p>
+    <p class="descDisplay">{{ weatherData.weather[0].description }}</p>
+    <p class="weatherEmoji">{{ getWeatherEmoji(weatherData.weather[0].id) }}</p>
+  </ng-container>
+</div>
